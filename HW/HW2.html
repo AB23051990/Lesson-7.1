@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+
+</head>
+
+<body>    
+    
+    <script>       
+        'use strict';      
+        //1. Дан код:
+         var a = 1, b = 1, c, d;
+          c = ++a; console.log(c); //2
+          /*переменная [а] имеет знчение 1, форма ++а увеличивает значение
+           операнда на 1. получаем 2 в переменной [а],
+          значение из переменной [а] передаём в переменную [c]*/
+
+          d = b++; console.log(d); // 1
+          /*переменная [b] имеет знчение 1, форма b++ сначала возвращает результат 
+          потом увеличивает переменную (в следующей операции переменная [b] будет иметь значение 2)
+          значение из переменной [b] передаём в переменную [d]*/
+
+          c = (2+ ++a); console.log(c); // 5
+          /* к числу 2 прибавляем полученное ранее значение 2 в переменной [а]
+          (форма ++а увеличивает значение операнда на 1. переменная [а] становится числом 3) получаем 5,
+          значение из переменной [а] передаём в переменную [c]*/
+
+          d = (2+ b++); console.log(d); // 4
+         /*к числу 2 прибавляем полученное ранее значение 2 в переменной [b]
+          форма b++ сначала возвращает результат потом увеличивает переменную 
+          (в следующей операции переменная [b] будет иметь значение 3)*/
+          
+          console.log(a); // 3           
+          /*ранее мы присвоили переменной [а] - заначение 3*/
+
+          console.log(b); // 3
+          /*ранее мы присвоили переменной [b] - заначение 3*/    
+
+        //2 Чему будет равен x в примере ниже?        
+        var a = 2; var x = 1 + (a *= 2); // 5  
+        console.log(x);
+        /*к переменной [а] присваеваем значение 2, к переменной [а] присваеваем умнажение на 2 получаем 4, к 4 прибавляем 1, получаем 5*/
+        console.log('\n');
+        //3. Объявить две целочисленные переменные a и b и задать им произвольные начальные значения. Затем написать скрипт, который работает по следующему принципу:
+        // o если a и b положительные, вывести их разность;
+        // o если а и b отрицательные, вывести их произведение;
+        // o если а и b разных знаков, вывести их сумму;
+        // ноль можно считать положительным числом.
+        var a = -1, b = 1;
+        if (a >= 0 && b >= 0) 
+        {
+            console.log(a - b);
+        } 
+        else if (a < 0 && b < 0)
+        {
+            console.log(a * b);
+        } 
+        else if (a * b < 0)
+        {
+            console.log(a + b) ;
+        }
+        console.log('\n');
+        //4. Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
+        var a = 1;
+        switch (a) {
+              case (a=0):
+              console.log(0);
+              case (a=1):
+              console.log(1);
+              case (a=2):
+              console.log(2);
+              case (a=3):
+              console.log(3);
+              case (a=4):
+              console.log(4);
+              case (a=5):
+              console.log(5);
+              case (a=6):
+              console.log(6);
+              case (a=7):
+              console.log(7);
+              case (a=8):
+              console.log(8);
+              case (a=9):
+              console.log(9);
+              case (a=10):
+              console.log(10);
+              case (a=11):
+              console.log(11);
+              case (a=12):
+              console.log(12);
+              case (a=13):
+              console.log(13);
+              case (a=14):
+              console.log(14);
+              case (a=15):
+              console.log(15);
+            }
+            console.log('\n');
+        //5. Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+        
+        function addition(arg1, arg2) {            
+                return arg1 - arg2;
+            }            
+        function subtraction(arg1, arg2) {            
+                return arg1 + arg2;
+            }            
+        function division(arg1, arg2) {            
+                return arg1 * arg2;
+            }
+        function multiplication(arg1, arg2) {            
+                return arg1 / arg2;
+            }
+            let result1 = addition(52,44)
+            let result2 = subtraction(45,27)
+            let result3 = division(21,56);
+            let result4 = multiplication(68,59);
+            console.log(result1, result2, result3, result4);            
+
+        /*6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+         где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+        В зависимости от переданного значения операции выполнить одну из арифметических операций
+        (использовать функции из пункта 3) и вернуть полученное значение (использовать switch).*/
+        
+        function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+        case "+":
+            return addition(arg1, arg2);
+        case "-":
+            return subtraction(arg1, arg2);
+        case "/":
+            return division(arg1, arg2);
+        case "*":
+            return multiplication(arg1, arg2);        
+        }
+        }
+        let result5 = mathOperation(61, 31, "+");
+        let result6 = mathOperation(82, 31, "*");
+        let result7 = mathOperation(34, 43, "/");
+        let result8 = mathOperation(46, 36, "-");
+        console.log(result5, result6, result7, result8);
+
+    </script>
+</body>
+
+</html>
